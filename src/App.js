@@ -1,10 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Users from './users/pages/Users';
+import NewPlaces from './places/pages/NewPlaces';
 
-function App() {
-  return (
-    <h1>Let's Start</h1>
+const App = () => {
+  return(
+
+  <Router>
+
+    <Switch>
+
+    <Route path="/" exact component={Users}>
+      <Users /> 
+    </Route>
+
+    <Route path="/places/new" exact component={NewPlaces}>
+      <NewPlaces /> 
+    </Route>
+
+    </Switch>
+
+    {/* <Redirect to="/" /> */}
+
+  </Router>
+
   );
-}
+};
 
 export default App;
